@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 10px;
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+}
+
+h2 {
+  color: hsl(14, 45%, 36%);
+}
+
+p, .prep-time-list, .ingredients-list, .instruction-list {
+    
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+    padding: 0; 
+  }
+
+.recipe-container {
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: hsl(30, 54%, 90%);
+}
+
+.recipe-content {
+  margin: 50px 0;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  padding: 22px;
+}
+
+#omelette-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 7px;
+}
+
+/* preparation time */
+#preparation-time {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 7px;
+  background-color: hsl(330, 100%, 98%);
+}
+
+.prep-time-list {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  list-style-type: none;
+}
+
+.prep-time-list li::before {
+  content: "•"; /* Add bullet symbol */
+  color: hsl(332, 51%, 32%); /* Set bullet color to purple */
+  margin-right: 15px;
+  margin-left: 4px;
+}
+
+.prep-time-list li:nth-child(-n + 2) {
+  margin-bottom: 5px;
+}
+
+#preparation-time h5 {
+  color: hsl(332, 51%, 32%);
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* ingredients */
+#ingredients {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+#ingredients h2 {
+  margin-bottom: 10px;
+}
+.ingredients-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 10px;
+}
+
+.ingredients-list li::before {
+  content: "•"; /* Add bullet symbol */
+  color: hsl(14, 45%, 36%); /* Set bullet color to purple */
+  margin-right: 15px;
+  margin-left: 4px;
+}
+
+.ingredients-list li:nth-child(-n + 4) {
+  margin-bottom: 5px;
+}
+
+/* instructions */
+#instructions {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.instruction-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 10px;
+  counter-reset: step-counter;
+}
+.instruction-list li {
+  counter-increment: step-counter;
+  text-align: left;
+  padding-left: 25px;
+  position: relative;
+}
+
+.instruction-list li::before {
+  content: counter(step-counter) ". ";
+  position: absolute;
+  color: hsl(14, 45%, 36%);
+  margin-right: 15px;
+  margin-left: 4px;
+  left: 0;
+}
+
+.instruction-list li:nth-child(-n + 5) {
+  margin-bottom: 5px;
+}
+
+/* nutritions */
+#nutrition-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#nutrition-table td {
+  padding: 5px 0;
+}
+#nutrition-table tr:nth-child(-n + 3) {
+  border-bottom: 1px solid #ccc;
+}
+
+#nutrition-table td:nth-of-type(odd) {
+  padding-left: 18px;
+  width: 50%;
+}
+
+#nutrition-table td:nth-of-type(even) {
+  padding-left: 6px;
+  width: 50%;
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
+
+@media (max-width: 375px) {
+  .recipe-content {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .recipe-content > *:not(#omelette-img) {
+    padding: 22px;
+  }
+}
